@@ -1,0 +1,29 @@
+name: "STERLING"
+run-name: "Maple"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  LUPINE:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.GRANITE.outputs.page_url }}
+    steps:
+      - name: "caldera"
+        uses: actions/checkout@v7
+      - name: "woodland"
+        uses: actions/configure-pages@v6
+      - name: "Crimson"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - name: "prism"
+        id: GRANITE
+        uses: actions/deploy-pages@v5
